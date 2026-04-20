@@ -14,7 +14,7 @@ void updateAdvertisement() {
   pAdvertising->stop();
 
   BLEAdvertisementData advData;
-  advData.setName("ESP32_Node4");
+  advData.setName("ESP32_Node_1");
 
   if (hasAny) {
     String mfData = "";
