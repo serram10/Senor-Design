@@ -4,7 +4,8 @@
 #include <math.h>   // needed for pow()
 
 // Change this for each ESP32 node
-#define NODE_ID "NODE_3"
+#define NODE_ID "NODE_4"
+
 // Pointer to BLE scan object
 BLEScan *pBLEScan;
 
@@ -30,7 +31,7 @@ class MyAdvertisedDeviceCallbacks : public BLEAdvertisedDeviceCallbacks {
       String deviceName = advertisedDevice.getName().c_str();
 
       // Only react to OUR beacon
-      if (deviceName == "AEGIS_TAG_1") {
+      if (deviceName.startsWith("AEGIS_TAG")) {
 
         // Get RSSI value
         int rssi = advertisedDevice.getRSSI();
